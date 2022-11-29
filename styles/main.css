@@ -1,0 +1,16 @@
+.carousel {
+  position: relative;
+  height: 600px
+  width: 80%;
+  margin: 0 auto;
+  }
+  
+ .carousel-slides{
+  width: 100%;
+  }
+  
+ .carousel-navigation {
+  background: lightgrey;
+  padding: 10px
+ 
+  }
