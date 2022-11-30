@@ -1,16 +1,24 @@
-.carousel {
+carousel - viewpoint
+{
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  height: 600px;
+  width: 500px;
+ }
+carousel {
   position: relative;
   height: 600px
-  width: 80%;
+  padding: 20px ;
   margin: 0 auto;
   }
   
- .carousel-slides{
-  width: 100%;
+ carousel-slides{
+  width: 640px;
+  height: 427px;
   }
   
- .carousel-navigation {
-  background: lightgrey;
-  padding: 10px
- 
-  }
+/* carousel-navigation {  */
+/* background: lightgrey; */
+/* padding: 10px  */
+ /*}*/
