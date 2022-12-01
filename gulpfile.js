@@ -11,62 +11,50 @@ const { src, dest, series, watch } = require(`gulp`),
     reload = browserSync.reload;
 
 let browserChoice = `default`;
-//Call browser
 async function chrome () {
     browserChoice = `google chrome`;
 }
-
-async function firefox () {
-    browserChoice = `firefox`;
-}
-
-//HTML
 let compressHTML = () => {
-    return src([`*.html`])
+    return src([`index.html`])
         .pipe(htmlCompressor({collapseWhitespace: true}))
         .pipe(dest(`prod`));
 };
 
 let validateHTML = () => {
     return src([
-        `*.html`])
+        `index.html`])
         .pipe(htmlValidator());
 };
 
-//JS
-let validateJS = () => {
-    return src([
-        `js/*.js`,
-        `js/**/*.js`])
-        .pipe(jsValidator())
-        .pipe(jsValidator.formatEach(`compact`));
+let lintJS = () => {
+    return src([`js/msin.js`])
+        .pipe(jsLinter())
+        .pipe(jsLinter.formatEach(`compact`));
 };
 
-// css
 let compressCSS = () => {
-    return src([`css/*.css`, `css/**/*.css`])
+    return src([`styles/main.css`])
     .pipe(cssCompressor({collapseWhitespace: true}))
     .pipe(dest(`prod`));
 };
 
 let validateCSS = () => {
     return src([
-        `css/*.css`,
-        `ss/**/*.css`])
+        `styles/main.css`])
         .pipe(cssValidator());
 };
 
 let transpileJSForDev = () => {
-    return src(`js/*.js`)
+    return src(`js/main.js`)
         .pipe(babel())
         .pipe(dest(`temp/js`));
 };
 
 let transpileJSForProd = () => {
-    return src(`js/*.js`)
+    return src(`js/main.js`)
         .pipe(babel())
         .pipe(jsCompressor())
-        .pipe(dest(`prod/scripts`));
+        .pipe(dest(`prod/js`));
 };
 
 let serve = () => {
@@ -82,25 +70,22 @@ let serve = () => {
         }
     });
 
-    watch(`*.html`, validateHTmL).on(`change`, reload);
-    watch(`css/*.css`, validateCSS).on(`change`, reload);
-    watch(`js/*.js`, validateJS,transpileJSForDev).on(`change`, reload);
+    watch('main.css`, series('lintCSS', 'compressCSS').on(`change`, reload);
+    watch(`main.js`, series('lintJS','transpileJSForDev').on(`change`, reload);
 
 };
 exports.chrome = series(chrome, serve);
-exports.firefox = series(firefox, serve);
 exports.compressHTML = compressHTML;
-exports.validateHTML = validateHTML;
-exports.compressJS = compressCSS;
-exports.validateJS =validateCSS;
+exports.lintJS = compressCSS;
 exports.compressorCSS = cssCompressor;
-exports.validateCSS =validateCSS;
+exports.lintCSS =validateCSS;
 exports.transpileJSForDev = transpileJSForDev;
 exports.transpileJSForProd = transpileJSForProd;
 exports.serve = series(
-    validateHTML,
-    validateJS,
-    validateCSS,
+    lintJS,
+    compressHTML,
+    transpileJSForProd,
+    compressCSS,
     transpileJSForDev,
     serve
 );
