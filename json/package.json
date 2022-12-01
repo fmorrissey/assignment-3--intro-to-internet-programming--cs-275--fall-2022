@@ -1,1 +1,24 @@
+{
+  "name": "assignment-3--intro-to-internet-programming--cs-275--fall-2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-warrior/assignment-3--intro-to-internet-programming--cs-275--fall-2022.git"
+  },
+  "keywords": [],
+  "author": "Fiona Morrissey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/code-warrior/assignment-3--intro-to-internet-programming--cs-275--fall-2022/issues"
+  },
+  "homepage": "https://github.com/code-warrior/assignment-3--intro-to-internet-programming--cs-275--fall-2022#readme",
+  "dependencies": {
+    "eslint": "^8.12.0"
+  }
+}
 
