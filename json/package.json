@@ -1,7 +1,7 @@
 {
   "name": "assignment-3--intro-to-internet-programming--cs-275--fall-2022",
   "version": "1.0.0",
-  "description": "",
+  "description": "Album Reviews",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
