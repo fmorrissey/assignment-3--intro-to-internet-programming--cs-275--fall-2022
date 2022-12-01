@@ -23,20 +23,19 @@ function AlbumReviews(json)
 window.onload = () => {
     let leftButton = document.querySelectorAll(`nav > a > img`)[0];
     let rightButton = document.querySelectorAll(`nav > a > img`)[1]; 
-    leftButton.classList.add(`hidden`); // giving it the hidden class at the start
+    leftButton.classList.add(`hidden`); 
     leftButton.classList.add(`button-L`);
     rightButton.classList.add(`button-R`);
     let movement = document.querySelectorAll(`div`)[1];
-    movement.classList.add(`move`); // adding a class that makes the slides transition into each other
+    movement.classList.add(`move`); 
     let body = document.querySelector(`body`);
     let script = document.createElement(`script`);
     script.setAttribute(`src`,`json/data.json`);
-    body.append(script); // link to the datasheet is put at the bottom of body
+    body.append(script); 
     let parent = document.getElementsByClassName(`carousel-slides`)[0];
     let width = 0;
     let index = 0;
 
-    // below checks to see if the left and right button are needed
     let checkSlide = () => {
         if (index > 0 && index < 3) {
             leftButton.classList.remove(`hidden`);
@@ -48,7 +47,6 @@ window.onload = () => {
         }
     };
 
-    // the below functions enable user interaction
     rightButton.addEventListener(`click`, () => {
         width -= 680;
         parent.style.transform = `translate(`+width+`px)`;
