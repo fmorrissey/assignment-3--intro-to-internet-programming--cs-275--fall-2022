@@ -1,24 +1,90 @@
-carousel - viewpoint
+body 
 {
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  height: 600px;
-  width: 500px;
- }
-carousel {
-  position: relative;
-  height: 600px
-  padding: 20px ;
-  margin: 0 auto;
-  }
-  
- carousel-slides{
+  color: #333;
+  position: absolute;
+  overflow-x: hidden;
+  text-align: center;
+  font-family: "Open Sans";
+  height: 100%;
+  width: 100%;
+  margin: 0 auto
+}
+header
+{
+  text-align: center;
+  padding: 20px;
+}
+p 
+{
+  padding-top: 20px;
+  text-align: left;
+  line-height: 1.4;
+}
+nav
+{
+  position: absolute;
+}
+h1
+{
+  font-size: 32px;
+  line-height: 38px;
+}
+.carousel
+{
+  border-left: 335px  white;
   width: 640px;
-  height: 427px;
-  }
-  
-/* carousel-navigation {  */
-/* background: lightgrey; */
-/* padding: 10px  */
- /*}*/
+  height: 850px;
+  overflow: clip;
+}
+
+.carousel-slides
+{
+  display:flex;
+  justify-content: flex-start;
+  margin-top: 0;
+}
+.container 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: 16px;
+  margin: 0;
+  height: 750px;
+  padding-right: 40px;
+}
+
+.item 
+{
+  padding-top: 20px;
+  align-items: center;
+}
+
+.button-L 
+{
+  position: absolute;
+  top: 250px;
+  z-index: 2;
+  background: rgb(233, 233, 233);
+  padding: 10px;
+}
+
+.button-R 
+{
+  position: absolute;
+  left: 590px;
+  top: 250px;
+  z-index: 2;
+  background: rgb(233, 233, 233);
+  padding: 10px;
+}
+
+.move 
+{
+  transition: all .5s ease-in-out;
+}
+
+.hidden 
+{
+  display: none;
+}
