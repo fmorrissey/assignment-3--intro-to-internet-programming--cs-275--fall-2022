@@ -1,17 +1,19 @@
 body 
 {
   color: #333;
-  position: absolute;
   overflow-x: hidden;
-  text-align: center;
-  font-family: "Open Sans";
+  position: absolute;
   height: 100%;
   width: 100%;
-  margin: 0 auto
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 16px;
 }
 header
 {
   text-align: center;
+  font-size: 32px;
   padding: 20px;
 }
 p 
@@ -26,7 +28,7 @@ nav
 }
 h1
 {
-  font-size: 16px;
+  font-size: 32px;
   line-height: 38px;
 }
 .carousel
@@ -35,11 +37,12 @@ h1
   width: 640px;
   height: 850px;
   overflow: clip;
+  z-index:1;
 }
 
 .carousel-slides
 {
-  display:flex;
+  position:relative;
   justify-content: flex-start;
   margin-top: 0;
 }
@@ -77,11 +80,6 @@ h1
   z-index: 2;
   background: rgb(233, 233, 233);
   padding: 10px;
-}
-
-.move 
-{
-  transition: all .5s ease-in-out;
 }
 
 .hidden 
