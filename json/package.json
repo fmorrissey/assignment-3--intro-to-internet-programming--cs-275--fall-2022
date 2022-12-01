@@ -17,8 +17,17 @@
     "url": "https://github.com/code-warrior/assignment-3--intro-to-internet-programming--cs-275--fall-2022/issues"
   },
   "homepage": "https://github.com/code-warrior/assignment-3--intro-to-internet-programming--cs-275--fall-2022#readme",
-  "dependencies": {
-    "eslint": "^8.12.0"
+  "devdependencies": {
+    "eslint": "^8.12.0",
+    "browser-sync": "^2.27.10",
+    "gulp":"^2.3.0",
+    "gulp-babel":"^8.15.0",
+    "gulp-clean-css":"^4.3.0",
+    "gulp-eslint":"^8.12.0",
+    "gulp-html":"^1.0.0",
+    "gulp-htmlmin":"^5.0.1",
+    "gulp-stylelint":"^13.0.0",
+    "gulp-uglify":"^3.0.2"
+    }
   }
-}
 
